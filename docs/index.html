@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>布吉岛雨课堂导出工具 · Landing</title>
+  <style>
+    :root {
+      --blue-1: #e6f2ff;
+      --blue-2: #e8f4f8;
+      --blue-3: #91caff;
+      --blue-4: #69b7ff;
+      --blue-5: #4096ff;
+      --blue-6: #1677ff;
+      --text-main: #0f172a;
+      --text-sub: #475569;
+      --card-shadow: 0 10px 36px rgba(22, 119, 255, 0.18);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(135deg, var(--blue-1) 0%, var(--blue-2) 100%);
+      color: var(--text-main);
+    }
+    .hero {
+      min-height: 100vh;
+      padding: 96px 20px 96px;
+      text-align: center;
+      background: linear-gradient(135deg, #e6f2ff 0%, #e8f4f8 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .title {
+      margin: 0 0 40px;
+    }
+    .title-main {
+      font-size: 40px;
+      font-weight: 800;
+      color: #0b5bd3;
+      text-shadow: 0 2px 6px rgba(15, 23, 42, 0.12);
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid rgba(11, 91, 211, 0.9);
+      display: inline-block;
+      /* 更长停留：整体时长加长，打字时间占比减小，停留占比增大 */
+      animation: typing 2.6s steps(3, end) infinite, blink-caret .8s step-end infinite;
+    }
+    .title-subline {
+      font-size: 24px;
+      font-weight: 700;
+      color: #0b5bd3;
+      margin-top: 8px;
+    }
+    .subtitle {
+      margin: 0 0 32px;
+      color: var(--text-sub);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    .cta {
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 16px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--blue-6) 0%, var(--blue-5) 100%);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(22, 119, 255, 0.32);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(22, 119, 255, 0.38);
+    }
+    .section {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 28px 20px 48px;
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+    .card {
+      background: #fff;
+      border: 1px solid rgba(145, 202, 255, 0.55);
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: var(--card-shadow);
+    }
+    h2 {
+      margin: 0 0 12px;
+      font-size: 18px;
+      color: #0f172a;
+    }
+    ul {
+      margin: 0;
+      padding-left: 18px;
+      line-height: 1.7;
+      color: var(--text-sub);
+      font-size: 14px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      background: rgba(22, 119, 255, 0.12);
+      color: #0b5bd3;
+      margin-bottom: 10px;
+    }
+    .footer {
+      text-align: center;
+      padding: 24px 12px 36px;
+      color: var(--text-sub);
+      font-size: 13px;
+    }
+    a.link { color: var(--blue-6); text-decoration: none; }
+    a.link:hover { text-decoration: underline; }
+    .mono { font-family: Consolas, Menlo, "SFMono-Regular", monospace; }
+    @keyframes typing {
+      0%   { width: 0; }
+      35%  { width: 3em; }  /* 正向打完（稍快） */
+      90%  { width: 3em; }  /* 停留时间明显拉长 */
+      100% { width: 0; }    /* 反向快速删除 */
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: rgba(11, 91, 211, 0.9); }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="title">
+      <div class="title-main">布吉岛</div>
+      <div class="title-subline">雨课堂导出工具</div>
+    </div>
+    <p class="subtitle">
+      雨课堂试卷一键导出，支持小窗试卷和无图试卷，导出为 Markdown / JSON，方便复习与整理题库。
+    </p>
+    <div class="cta">
+      <a class="btn" href="https://github.com/itkdm/yuketang-export" target="_blank" rel="noreferrer">查看 GitHub 仓库</a>
+      <a class="btn" href="https://github.com/itkdm/yuketang-export/archive/refs/heads/master.zip" target="_blank" rel="noreferrer">下载源码</a>
+      <a class="btn" href="https://github.com/itkdm/yuketang-export#readme" target="_blank" rel="noreferrer">安装与使用说明</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <!-- 第一行：功能概览 + 页面模式 -->
+    <div class="card">
+      <span class="badge">功能概览</span>
+      <h2>一键导出雨课堂试卷</h2>
+      <ul>
+        <li>支持导出试卷题目、选项和答题记录</li>
+        <li>自动生成 Markdown / JSON 文件</li>
+        <li>适合复习、整理错题与搭建题库</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="badge">页面模式</span>
+      <h2>小窗试卷 & 无图试卷</h2>
+      <ul>
+        <li>小窗试卷（iframe）：适配学生答题小窗</li>
+        <li>无图试卷（正常试卷）：适配成绩/解析页面</li>
+        <li>自动识别当前页面类型，也可手动切换</li>
+      </ul>
+    </div>
+
+    <!-- 第二行：导出格式 + 安装方式 -->
+    <div class="card">
+      <span class="badge">导出格式</span>
+      <h2>Markdown / JSON</h2>
+      <ul>
+        <li>Markdown：适合人类阅读与打印</li>
+        <li>JSON：适合程序处理与二次开发</li>
+        <li>文件名包含试卷标题与 exam_id，便于归档</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="badge">安装方式</span>
+      <h2>扩展 & 用户脚本</h2>
+      <ul>
+        <li>Chrome / Edge：开发者模式加载 <span class="mono">extension/</span></li>
+        <li>Firefox：临时载入 <span class="mono">extension/manifest.json</span></li>
+        <li>用户脚本：在 Tampermonkey 粘贴 <span class="mono">userscripts</span> 中脚本</li>
+      </ul>
+    </div>
+
+    <!-- 第三行：隐私安全 + 项目信息 -->
+    <div class="card">
+      <span class="badge">隐私与安全</span>
+      <h2>本地处理 · 不上传</h2>
+      <ul>
+        <li>所有操作在本地浏览器完成，不上传数据</li>
+        <li>最小权限：仅使用 storage 与目标站点 host 权限</li>
+        <li>仅导出你本来就能在页面上看到的内容</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="badge">项目与支持</span>
+      <h2>开源 · 可审计 · 可扩展</h2>
+      <ul>
+        <li>GitHub：<a class="link" href="https://github.com/itkdm/yuketang-export" target="_blank" rel="noreferrer">itkdm/yuketang-export</a></li>
+        <li>问题反馈：<a class="link" href="https://github.com/itkdm/yuketang-export/issues" target="_blank" rel="noreferrer">提交 Issue</a></li>
+        <li>更多说明：<a class="link" href="../extension/README.md" target="_blank" rel="noreferrer">扩展文档</a> · <a class="link" href="../userscripts/README.md" target="_blank" rel="noreferrer">脚本文档</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    © 2026 布吉岛 / itkdm · 本地处理 · 不收集数据
+  </div>
+</body>
+</html>
+

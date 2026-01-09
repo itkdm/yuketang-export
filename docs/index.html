@@ -107,7 +107,7 @@
       padding: 28px 20px 48px;
       display: grid;
       gap: 18px;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
     .card {
       background: #fff;
@@ -156,6 +156,79 @@
     @keyframes blink-caret {
       from, to { border-color: transparent; }
       50% { border-color: rgba(11, 91, 211, 0.9); }
+    }
+
+    /* 响应式适配：平板与中小屏幕 */
+    @media (max-width: 1024px) {
+      .hero {
+        padding: 72px 16px 72px;
+      }
+      .title-main {
+        font-size: 34px;
+      }
+      .title-subline {
+        font-size: 22px;
+      }
+      .subtitle {
+        font-size: 15px;
+        padding: 0 8px;
+      }
+      .section {
+        padding: 20px 16px 40px;
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* 手机端适配：小屏幕与超小屏幕 */
+    @media (max-width: 640px) {
+      .hero {
+        min-height: 100vh;      /* 首屏仅展示主内容 */
+        padding: 48px 14px 36px;
+      }
+      .title-main {
+        font-size: 28px;
+        line-height: 1.3;
+        white-space: normal;   /* 小屏允许换行，避免横向滚动 */
+        border-right: none;    /* 移动端简化为静态标题，避免打字动画抖动 */
+        animation: none;
+      }
+      .title-subline {
+        font-size: 18px;
+        margin-top: 4px;
+      }
+      .subtitle {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 24px;
+      }
+      .cta {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+      }
+      .btn {
+        width: 100%;
+        padding: 10px 10px;
+        font-size: 14px;
+        border-radius: 10px;
+      }
+      .section {
+        padding: 16px 12px 32px;
+        gap: 14px;
+      }
+      .card {
+        padding: 16px 14px;
+      }
+      h2 {
+        font-size: 16px;
+      }
+      ul {
+        font-size: 13px;
+      }
+      .footer {
+        padding: 18px 10px 28px;
+        font-size: 12px;
+      }
     }
   </style>
 </head>

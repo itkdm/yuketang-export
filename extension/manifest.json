@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "布吉岛雨课堂导出工具",
+  "version": "1.0.0",
+  "description": "布吉岛的小工具 - 导出雨课堂试卷，支持小窗试卷和无图试卷两种模式",
+  "author": "itkdm",
+  "homepage_url": "https://github.com/itkdm/yuketang-export",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.yuketang.cn/*",
+    "https://yuketang.cn/*",
+    "https://examination.xuetangx.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.yuketang.cn/v2/web/*",
+        "https://www.yuketang.cn/v/quiz/*",
+        "https://yuketang.cn/v2/web/*",
+        "https://yuketang.cn/v/quiz/*",
+        "https://examination.xuetangx.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "布吉岛雨课堂导出工具"
+  }
+}
+

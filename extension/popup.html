@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 300px;
+      padding: 20px;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #e6f2ff 0%, #e8f4f8 100%);
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .header-bar {
+      width: 4px;
+      height: 20px;
+      background: linear-gradient(180deg, #1677ff 0%, #69b7ff 100%);
+      border-radius: 2px;
+      box-shadow: 0 0 8px rgba(22,119,255,0.5);
+    }
+    .title {
+      font-weight: 700;
+      font-size: 18px;
+      color: #0958d9;
+      text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+    }
+    .content {
+      color: #4a90e2;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .switch-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 16px 0;
+      padding: 12px;
+      background: rgba(255,255,255,0.6);
+      border-radius: 8px;
+      border: 1px solid rgba(145,202,255,0.3);
+    }
+    .switch-label {
+      color: #0958d9;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .3s;
+      border-radius: 24px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .3s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background: linear-gradient(135deg, #1677ff 0%, #4096ff 100%);
+    }
+    input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+    .footer {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(145,202,255,0.5);
+      color: #6ba3d8;
+      font-size: 12px;
+      text-align: center;
+    }
+    a {
+      color: #1677ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <script src="popup.js"></script>
+</head>
+<body>
+  <div class="header">
+    <span class="header-bar"></span>
+    <div class="title">布吉岛的小工具</div>
+  </div>
+  <div class="content">
+    <p>雨课堂试卷导出工具</p>
+    <p>支持两种模式：</p>
+    <ul style="margin: 8px 0; padding-left: 20px;">
+      <li>小窗试卷模式</li>
+      <li>无图试卷模式</li>
+    </ul>
+  </div>
+  <div class="switch-container">
+    <span class="switch-label">启用扩展</span>
+    <label class="switch">
+      <input type="checkbox" id="extensionToggle" checked>
+      <span class="slider"></span>
+    </label>
+  </div>
+  <div class="content" style="margin-top: 8px;">
+    <p style="font-size: 12px; color: #6ba3d8;">在支持的页面会自动显示导出面板。</p>
+  </div>
+  <div class="footer">
+        <a href="https://github.com/itkdm/yuketang-export" target="_blank">GitHub</a>
+  </div>
+</body>
+</html>
+
